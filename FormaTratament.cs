@@ -86,7 +86,7 @@ namespace ProiectBD
             }
         }
 
-        private async void actionBT_Click(object sender, EventArgs e)
+        private void actionBT_Click(object sender, EventArgs e)
         {
             if(!update) {
                 DialogResult dr = MessageBox.Show("Adăugare tratament?", "Confirmare", MessageBoxButtons.YesNo);
