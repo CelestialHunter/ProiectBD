@@ -127,9 +127,10 @@ namespace ProiectBD
             return Tratament;
         }
 
-        public Tratament getTratament() {
+        public Tratament getTratamentById(int IdTratament) {
             Tratament tratament = null;
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [Tratament]", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [Tratament] WHERE IdTratament = @IdTratament", conn);
+            cmd.Parameters.AddWithValue("@IdTratament", IdTratament);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())

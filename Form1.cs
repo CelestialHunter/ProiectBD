@@ -20,7 +20,7 @@ namespace ProiectBD
             refreshClienti();
         }
 
-        private void refreshClienti()
+        public void refreshClienti()
         {
             clientiDGV.DataBindings.Clear();
             clientiDGV.Rows.Clear();

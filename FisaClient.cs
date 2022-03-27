@@ -29,6 +29,8 @@ namespace ProiectBD
             numeTB.Text = client.nume;
             adresaTB.Text = client.adresa;
 
+            tratamenteDGV.Rows.Clear();
+
             BindingList<Tratament> tratamente = new BindingList<Tratament>(db.getTratamenteByClientId(client.idClient));
 
             foreach(Tratament t in tratamente)
@@ -44,6 +46,15 @@ namespace ProiectBD
 
         private void backBT_Click(object sender, EventArgs e)
         {
+            if (numeTB.Text.CompareTo(client.nume) != 0 || adresaTB.Text.CompareTo(client.adresa) != 0)
+            {
+                if (MessageBox.Show("Modificati datele clientului?", "Modificare date client", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    client.nume = numeTB.Text;
+                    client.adresa = adresaTB.Text;
+                    db.updateClient(client);
+                }
+            }
             this.Close();
         }
 
@@ -56,7 +67,20 @@ namespace ProiectBD
 
         private void FisaClient_FormClosing(object sender, FormClosingEventArgs e)
         {
+            parent.refreshClienti();
             parent.Show();
+        }
+
+        private void tratamenteDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int idTratament = Convert.ToInt32(tratamenteDGV.Rows[e.RowIndex].Cells[0].Value);
+                Tratament t = db.getTratamentById(idTratament);
+                FormaTratament ft = new FormaTratament(this, client, t);
+                ft.Show();
+                this.Hide();
+            }
         }
     }
 

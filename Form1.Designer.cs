@@ -38,11 +38,11 @@ namespace ProiectBD
             this.NumeClientCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdresaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.newClientTab = new System.Windows.Forms.TabPage();
-            this.exitTab = new System.Windows.Forms.TabPage();
             this.newClientLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.numeTB = new System.Windows.Forms.TextBox();
             this.adresaTB = new System.Windows.Forms.TextBox();
+            this.numeTB = new System.Windows.Forms.TextBox();
             this.addBT = new System.Windows.Forms.Button();
+            this.exitTab = new System.Windows.Forms.TabPage();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
@@ -51,6 +51,30 @@ namespace ProiectBD
             this.newClientTab.SuspendLayout();
             this.newClientLayout.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(168, 108);
+            label1.Margin = new System.Windows.Forms.Padding(16);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(120, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Nume";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(168, 185);
+            label2.Margin = new System.Windows.Forms.Padding(16);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(120, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Adresa";
+            label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabControl
             // 
@@ -129,15 +153,6 @@ namespace ProiectBD
             this.newClientTab.Text = "Adăugare Client";
             this.newClientTab.UseVisualStyleBackColor = true;
             // 
-            // exitTab
-            // 
-            this.exitTab.Location = new System.Drawing.Point(4, 27);
-            this.exitTab.Name = "exitTab";
-            this.exitTab.Size = new System.Drawing.Size(768, 395);
-            this.exitTab.TabIndex = 2;
-            this.exitTab.Text = "Părăsire Aplicație";
-            this.exitTab.UseVisualStyleBackColor = true;
-            // 
             // newClientLayout
             // 
             this.newClientLayout.ColumnCount = 4;
@@ -161,16 +176,14 @@ namespace ProiectBD
             this.newClientLayout.Size = new System.Drawing.Size(762, 389);
             this.newClientLayout.TabIndex = 0;
             // 
-            // label1
+            // adresaTB
             // 
-            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(155, 108);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(146, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Nume";
-            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.adresaTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.adresaTB.Location = new System.Drawing.Point(320, 181);
+            this.adresaTB.Margin = new System.Windows.Forms.Padding(16);
+            this.adresaTB.Name = "adresaTB";
+            this.adresaTB.Size = new System.Drawing.Size(272, 23);
+            this.adresaTB.TabIndex = 3;
             // 
             // numeTB
             // 
@@ -180,26 +193,6 @@ namespace ProiectBD
             this.numeTB.Name = "numeTB";
             this.numeTB.Size = new System.Drawing.Size(272, 23);
             this.numeTB.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(155, 185);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(146, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Adresa";
-            label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // adresaTB
-            // 
-            this.adresaTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.adresaTB.Location = new System.Drawing.Point(320, 181);
-            this.adresaTB.Margin = new System.Windows.Forms.Padding(16);
-            this.adresaTB.Name = "adresaTB";
-            this.adresaTB.Size = new System.Drawing.Size(272, 23);
-            this.adresaTB.TabIndex = 3;
             // 
             // addBT
             // 
@@ -214,6 +207,15 @@ namespace ProiectBD
             this.addBT.Text = "Adăugare Client";
             this.addBT.UseVisualStyleBackColor = true;
             this.addBT.Click += new System.EventHandler(this.addBT_Click);
+            // 
+            // exitTab
+            // 
+            this.exitTab.Location = new System.Drawing.Point(4, 27);
+            this.exitTab.Name = "exitTab";
+            this.exitTab.Size = new System.Drawing.Size(768, 395);
+            this.exitTab.TabIndex = 2;
+            this.exitTab.Text = "Părăsire Aplicație";
+            this.exitTab.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

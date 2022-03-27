@@ -75,16 +75,4 @@
   <metadata name="dataTratamentCol.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
-  <metadata name="idTratamentCol.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
-  <metadata name="interventieCol.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
-  <metadata name="stareCol.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataTratamentCol.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
 </root>

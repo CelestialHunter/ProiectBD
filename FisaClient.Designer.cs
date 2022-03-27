@@ -97,10 +97,11 @@ namespace ProiectBD
             this.backBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.backBT.CausesValidation = false;
             this.tableLayoutPanel1.SetColumnSpan(this.backBT, 2);
-            this.backBT.Location = new System.Drawing.Point(403, 392);
+            this.backBT.Location = new System.Drawing.Point(403, 388);
             this.backBT.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
+            this.backBT.MinimumSize = new System.Drawing.Size(0, 32);
             this.backBT.Name = "backBT";
-            this.backBT.Size = new System.Drawing.Size(357, 23);
+            this.backBT.Size = new System.Drawing.Size(357, 32);
             this.backBT.TabIndex = 8;
             this.backBT.Text = "Revenire";
             this.backBT.UseVisualStyleBackColor = true;
@@ -111,10 +112,11 @@ namespace ProiectBD
             this.newTratBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.newTratBT.CausesValidation = false;
             this.tableLayoutPanel1.SetColumnSpan(this.newTratBT, 2);
-            this.newTratBT.Location = new System.Drawing.Point(16, 392);
+            this.newTratBT.Location = new System.Drawing.Point(16, 388);
             this.newTratBT.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
+            this.newTratBT.MinimumSize = new System.Drawing.Size(0, 32);
             this.newTratBT.Name = "newTratBT";
-            this.newTratBT.Size = new System.Drawing.Size(355, 23);
+            this.newTratBT.Size = new System.Drawing.Size(355, 32);
             this.newTratBT.TabIndex = 7;
             this.newTratBT.Text = "Adăugare Tratament";
             this.newTratBT.UseVisualStyleBackColor = true;
@@ -126,7 +128,6 @@ namespace ProiectBD
             this.numeTB.Location = new System.Drawing.Point(93, 9);
             this.numeTB.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
             this.numeTB.Name = "numeTB";
-            this.numeTB.ReadOnly = true;
             this.numeTB.Size = new System.Drawing.Size(278, 23);
             this.numeTB.TabIndex = 3;
             // 
@@ -136,7 +137,6 @@ namespace ProiectBD
             this.adresaTB.Location = new System.Drawing.Point(480, 9);
             this.adresaTB.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
             this.adresaTB.Name = "adresaTB";
-            this.adresaTB.ReadOnly = true;
             this.adresaTB.Size = new System.Drawing.Size(280, 23);
             this.adresaTB.TabIndex = 5;
             // 
@@ -158,6 +158,7 @@ namespace ProiectBD
             this.tratamenteDGV.RowTemplate.Height = 25;
             this.tratamenteDGV.Size = new System.Drawing.Size(770, 334);
             this.tratamenteDGV.TabIndex = 6;
+            this.tratamenteDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tratamenteDGV_CellClick);
             // 
             // idTratamentCol
             // 

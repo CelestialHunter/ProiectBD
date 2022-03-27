@@ -183,10 +183,11 @@ namespace ProiectBD
             // 
             this.actionBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.actionBT, 2);
-            this.actionBT.Location = new System.Drawing.Point(16, 380);
-            this.actionBT.Margin = new System.Windows.Forms.Padding(16, 8, 16, 8);
+            this.actionBT.Location = new System.Drawing.Point(16, 375);
+            this.actionBT.Margin = new System.Windows.Forms.Padding(16, 3, 16, 3);
+            this.actionBT.MinimumSize = new System.Drawing.Size(0, 32);
             this.actionBT.Name = "actionBT";
-            this.actionBT.Size = new System.Drawing.Size(744, 23);
+            this.actionBT.Size = new System.Drawing.Size(744, 32);
             this.actionBT.TabIndex = 9;
             this.actionBT.Text = "Revenire";
             this.actionBT.UseVisualStyleBackColor = true;

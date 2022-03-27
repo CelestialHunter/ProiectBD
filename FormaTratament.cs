@@ -63,14 +63,30 @@ namespace ProiectBD
 
             if (update)
             {
-                intervCB.SelectedValue = tratament.idInterventie;                
+                foreach(Interventie i in intervCB.Items)
+                {
+                    if (i.idInterventie == tratament.idInterventie)
+                    {
+                        intervCB.SelectedItem = i;
+                        break;
+                    }
+                }               
+
                 pretTB.Text = (db.getInterventieById(tratament.idInterventie)).pret.ToString();
-                stareCB.SelectedValue = tratament.idStare;
+
+                foreach (Stare s in stareCB.Items)
+                {
+                    if (s.idStare == tratament.idStare)
+                    {
+                        stareCB.SelectedItem = s;
+                        break;
+                    }
+                }
                 titleLB.Text = "Vizualizare Tratament";
             }
         }
 
-        private void actionBT_Click(object sender, EventArgs e)
+        private async void actionBT_Click(object sender, EventArgs e)
         {
             if(!update) {
                 DialogResult dr = MessageBox.Show("Adăugare tratament?", "Confirmare", MessageBoxButtons.YesNo);
@@ -93,12 +109,18 @@ namespace ProiectBD
             }
             else 
             {   
-                if((int)intervCB.SelectedValue != tratament.idInterventie || (int)stareCB.SelectedValue != tratament.idStare) {
+                Interventie i = (Interventie)intervCB.SelectedItem;
+                Stare s = (Stare)stareCB.SelectedItem;
+                if ( i == null || s == null ) {
+                    MessageBox.Show("Selectati o interventie si o stare!");
+                    return;
+                }
+                
+                if(i.idInterventie != tratament.idInterventie || s.idStare != tratament.idStare) {
                     DialogResult dr = MessageBox.Show("Modificare tratament?", "Confirmare", MessageBoxButtons.YesNo);
                     if(dr == DialogResult.Yes) {
-                        //db.updateTratament(new Tratament(tratament.idTratament, client.idClient, (int)intervCB.SelectedValue, (int)stareCB.SelectedValue, DateTime.Now));
-                        Interventie i = (Interventie)intervCB.SelectedItem;
-                        Stare s = (Stare)stareCB.SelectedItem;
+                        //Interventie i = (Interventie)intervCB.SelectedItem;
+                        //Stare s = (Stare)stareCB.SelectedItem;
                         db.updateTratament(new Tratament(tratament.idTratament, client.idClient, i.idInterventie, s.idStare, DateTime.Now));
                         parent.fillFisa();
                     }
