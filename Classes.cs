@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProiectBD
 {
-    class Client
+    public class Client
     {
         public int idClient;
         public String nume;
@@ -20,7 +20,7 @@ namespace ProiectBD
         }
     }
 
-    class Interventie
+    public class Interventie
     {
         public int idInterventie;
         public String denumire;
@@ -34,7 +34,7 @@ namespace ProiectBD
         }
     }
 
-    class Tratament
+    public class Tratament
     {
         public int idTratament;
         public int idClient;
@@ -52,7 +52,7 @@ namespace ProiectBD
         }
     }
 
-    class Stare {
+    public class Stare {
         public int idStare;
         public String denumire;
         public Double pret;

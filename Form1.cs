@@ -12,7 +12,7 @@ namespace ProiectBD
 {
     public partial class Form1 : Form
     {
-        DataBase db;
+        internal DataBase db;
         public Form1()
         {
             InitializeComponent();
@@ -59,7 +59,14 @@ namespace ProiectBD
 
         private void clientiDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0)
+            {
+                int idClient = (int)clientiDGV.Rows[e.RowIndex].Cells[0].Value;
+                Client client = db.getClientById(idClient);
+                FisaClient fc = new FisaClient(this, client);
+                fc.Show();
+                this.Hide();
+            }
         }
 
         private void addBT_Click(object sender, EventArgs e)

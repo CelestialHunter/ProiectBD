@@ -101,21 +101,35 @@ namespace ProiectBD
         }
 
         public List<Tratament> getTratamente() {
-            List<Tratament> tratamente = new List<Tratament>();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [Tratamente]", conn);
+            List<Tratament> Tratament = new List<Tratament>();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [Tratament]", conn);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                tratamente.Add(new Tratament(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetDateTime(4)));
+                Tratament.Add(new Tratament(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetDateTime(4)));
             }
             conn.Close();
-            return tratamente;
+            return Tratament;
+        }
+
+        public List<Tratament> getTratamenteByClientId(int IdClient) {
+            List<Tratament> Tratament = new List<Tratament>();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [Tratament] WHERE IdClient = @IdClient", conn);
+            cmd.Parameters.AddWithValue("@IdClient", IdClient);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Tratament.Add(new Tratament(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetDateTime(4)));
+            }
+            conn.Close();
+            return Tratament;
         }
 
         public Tratament getTratament() {
             Tratament tratament = null;
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [Tratamente]", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [Tratament]", conn);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -127,7 +141,7 @@ namespace ProiectBD
         }
 
         public void insertTratament(int IdClient, int IdInterventie, int IdStare, DateTime data) {
-            SqlCommand cmd = new SqlCommand("INSERT INTO [Tratamente] (IdClient, IdInterventie, IdStare, Data) VALUES (@IdClient, @IdInterventie, @IdStare, @Data)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO [Tratament] (IdClient, IdInterventie, IdStare, Data) VALUES (@IdClient, @IdInterventie, @IdStare, @Data)", conn);
             cmd.Parameters.AddWithValue("@IdClient", IdClient);
             cmd.Parameters.AddWithValue("@IdInterventie", IdInterventie);
             cmd.Parameters.AddWithValue("@IdStare", IdStare);
@@ -138,7 +152,7 @@ namespace ProiectBD
         }
 
         public void updateTratament(Tratament tratament) {
-            SqlCommand cmd = new SqlCommand("UPDATE [Tratamente] SET IdClient = @IdClient, IdInterventie = @IdInterventie, IdStare = @IdStare, Data = @Data WHERE IdTratament = @IdTratament", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE [Tratament] SET IdClient = @IdClient, IdInterventie = @IdInterventie, IdStare = @IdStare, Data = @Data WHERE IdTratament = @IdTratament", conn);
             cmd.Parameters.AddWithValue("@IdClient", tratament.idClient);
             cmd.Parameters.AddWithValue("@IdInterventie", tratament.idInterventie);
             cmd.Parameters.AddWithValue("@IdStare", tratament.idStare);
@@ -149,7 +163,7 @@ namespace ProiectBD
             conn.Close();
         }
         public void deleteTratament(Tratament tratament) {
-            SqlCommand cmd = new SqlCommand("DELETE FROM [Tratamente] WHERE IdTratament = @IdTratament", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM [Tratament] WHERE IdTratament = @IdTratament", conn);
             cmd.Parameters.AddWithValue("@IdTratament", tratament.idTratament);
             conn.Open();
             cmd.ExecuteNonQuery();
