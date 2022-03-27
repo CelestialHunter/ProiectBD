@@ -55,7 +55,7 @@ namespace ProiectBD
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(71, 15);
             label1.TabIndex = 2;
-            label1.Text = "Nume";
+            label1.Text = "Client";
             label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -118,6 +118,7 @@ namespace ProiectBD
             this.newTratBT.TabIndex = 7;
             this.newTratBT.Text = "Adăugare Tratament";
             this.newTratBT.UseVisualStyleBackColor = true;
+            this.newTratBT.Click += new System.EventHandler(this.newTratBT_Click);
             // 
             // numeTB
             // 
@@ -198,6 +199,7 @@ namespace ProiectBD
             this.Name = "FisaClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FisaClient";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FisaClient_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tratamenteDGV)).EndInit();

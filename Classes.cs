@@ -55,12 +55,10 @@ namespace ProiectBD
     public class Stare {
         public int idStare;
         public String denumire;
-        public Double pret;
-        public Stare(int idStare, String denumire, Double pret)
+        public Stare(int idStare, String denumire)
         {
             this.idStare = idStare;
             this.denumire = denumire;
-            this.pret = pret;
         }
     }
 }

@@ -172,12 +172,12 @@ namespace ProiectBD
 
         public List<Stare> getStari() {
             List<Stare> stari = new List<Stare>();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [Stari]", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [StareTratament]", conn);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                stari.Add(new Stare(reader.GetInt32(0), reader.GetString(1), reader.GetDouble(2)));
+                stari.Add(new Stare(reader.GetInt32(0), reader.GetString(1)));
             }
             conn.Close();
             return stari;
@@ -185,13 +185,13 @@ namespace ProiectBD
 
         public Stare getStareById(int idStare) {
             Stare stare = null;
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [Stari] WHERE IdStare = @IdStare", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [StareTratament] WHERE IdStare = @IdStare", conn);
             cmd.Parameters.AddWithValue("@IdStare", idStare);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                stare = new Stare(reader.GetInt32(0), reader.GetString(1), reader.GetDouble(2));
+                stare = new Stare(reader.GetInt32(0), reader.GetString(1));
             }
             conn.Close();
             return stare;

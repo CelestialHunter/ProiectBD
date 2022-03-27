@@ -13,7 +13,7 @@ namespace ProiectBD
     public partial class FisaClient : Form
     {
         Form1 parent;
-        DataBase db;
+        internal DataBase db;
         Client client;
         public FisaClient(Form1 parent, Client client)
         {
@@ -44,8 +44,19 @@ namespace ProiectBD
 
         private void backBT_Click(object sender, EventArgs e)
         {
-            parent.Show();
             this.Close();
+        }
+
+        private void newTratBT_Click(object sender, EventArgs e)
+        {
+            FormaTratament ft = new FormaTratament(this, client, null);
+            ft.Show();
+            this.Hide();
+        }
+
+        private void FisaClient_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parent.Show();
         }
     }
 
