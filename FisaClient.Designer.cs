@@ -41,6 +41,7 @@ namespace ProiectBD
             this.interventieCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stareCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataTratamentCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -149,7 +150,8 @@ namespace ProiectBD
             this.idTratamentCol,
             this.interventieCol,
             this.stareCol,
-            this.dataTratamentCol});
+            this.dataTratamentCol,
+            this.deleteCol});
             this.tableLayoutPanel1.SetColumnSpan(this.tratamenteDGV, 4);
             this.tratamenteDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tratamenteDGV.Location = new System.Drawing.Point(3, 45);
@@ -191,6 +193,16 @@ namespace ProiectBD
             this.dataTratamentCol.ReadOnly = true;
             this.dataTratamentCol.Width = 56;
             // 
+            // deleteCol
+            // 
+            this.deleteCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.deleteCol.HeaderText = "Ștergere";
+            this.deleteCol.Name = "deleteCol";
+            this.deleteCol.ReadOnly = true;
+            this.deleteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.deleteCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.deleteCol.Width = 75;
+            // 
             // FisaClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -214,11 +226,12 @@ namespace ProiectBD
         private System.Windows.Forms.TextBox numeTB;
         private System.Windows.Forms.TextBox adresaTB;
         private System.Windows.Forms.DataGridView tratamenteDGV;
+        private System.Windows.Forms.Button backBT;
+        private System.Windows.Forms.Button newTratBT;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTratamentCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn interventieCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn stareCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataTratamentCol;
-        private System.Windows.Forms.Button backBT;
-        private System.Windows.Forms.Button newTratBT;
+        private System.Windows.Forms.DataGridViewButtonColumn deleteCol;
     }
 }

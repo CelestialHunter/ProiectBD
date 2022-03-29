@@ -60,9 +60,18 @@ namespace ProiectBD
         private void clientiDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
-            {
+            {       
                 int idClient = (int)clientiDGV.Rows[e.RowIndex].Cells[0].Value;
                 Client client = db.getClientById(idClient);
+                if (e.ColumnIndex == deleteCol.Index) {
+                    if (MessageBox.Show("Sigur doriti sa stergeti clientul " + client.nume + "?\n(Această operațiune este ireversibilă)", "Stergere client", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        db.deleteClient(client);
+                        refreshClienti();
+                    }
+                    return;
+                }
+                
                 FisaClient fc = new FisaClient(this, client);
                 fc.Show();
                 this.Hide();

@@ -34,15 +34,16 @@ namespace ProiectBD
             this.tabControl = new System.Windows.Forms.TabControl();
             this.clientiTab = new System.Windows.Forms.TabPage();
             this.clientiDGV = new System.Windows.Forms.DataGridView();
-            this.IdClientCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeClientCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdresaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.newClientTab = new System.Windows.Forms.TabPage();
             this.newClientLayout = new System.Windows.Forms.TableLayoutPanel();
             this.adresaTB = new System.Windows.Forms.TextBox();
             this.numeTB = new System.Windows.Forms.TextBox();
             this.addBT = new System.Windows.Forms.Button();
             this.exitTab = new System.Windows.Forms.TabPage();
+            this.IdClientCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeClientCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdresaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteCol = new System.Windows.Forms.DataGridViewButtonColumn();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
@@ -108,7 +109,8 @@ namespace ProiectBD
             this.clientiDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdClientCol,
             this.NumeClientCol,
-            this.AdresaCol});
+            this.AdresaCol,
+            this.deleteCol});
             this.clientiDGV.Location = new System.Drawing.Point(3, 3);
             this.clientiDGV.Name = "clientiDGV";
             this.clientiDGV.ReadOnly = true;
@@ -116,31 +118,6 @@ namespace ProiectBD
             this.clientiDGV.Size = new System.Drawing.Size(762, 389);
             this.clientiDGV.TabIndex = 0;
             this.clientiDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientiDGV_CellClick);
-            // 
-            // IdClientCol
-            // 
-            this.IdClientCol.DataPropertyName = "idClient";
-            this.IdClientCol.HeaderText = "Id";
-            this.IdClientCol.Name = "IdClientCol";
-            this.IdClientCol.ReadOnly = true;
-            this.IdClientCol.Visible = false;
-            // 
-            // NumeClientCol
-            // 
-            this.NumeClientCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NumeClientCol.DataPropertyName = "nume";
-            this.NumeClientCol.HeaderText = "Nume";
-            this.NumeClientCol.Name = "NumeClientCol";
-            this.NumeClientCol.ReadOnly = true;
-            this.NumeClientCol.Width = 65;
-            // 
-            // AdresaCol
-            // 
-            this.AdresaCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AdresaCol.DataPropertyName = "adresa";
-            this.AdresaCol.HeaderText = "Adresa";
-            this.AdresaCol.Name = "AdresaCol";
-            this.AdresaCol.ReadOnly = true;
             // 
             // newClientTab
             // 
@@ -217,6 +194,41 @@ namespace ProiectBD
             this.exitTab.Text = "Părăsire Aplicație";
             this.exitTab.UseVisualStyleBackColor = true;
             // 
+            // IdClientCol
+            // 
+            this.IdClientCol.DataPropertyName = "idClient";
+            this.IdClientCol.HeaderText = "Id";
+            this.IdClientCol.Name = "IdClientCol";
+            this.IdClientCol.ReadOnly = true;
+            this.IdClientCol.Visible = false;
+            // 
+            // NumeClientCol
+            // 
+            this.NumeClientCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NumeClientCol.DataPropertyName = "nume";
+            this.NumeClientCol.HeaderText = "Nume";
+            this.NumeClientCol.Name = "NumeClientCol";
+            this.NumeClientCol.ReadOnly = true;
+            this.NumeClientCol.Width = 65;
+            // 
+            // AdresaCol
+            // 
+            this.AdresaCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AdresaCol.DataPropertyName = "adresa";
+            this.AdresaCol.HeaderText = "Adresa";
+            this.AdresaCol.Name = "AdresaCol";
+            this.AdresaCol.ReadOnly = true;
+            // 
+            // deleteCol
+            // 
+            this.deleteCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.deleteCol.HeaderText = "Ștergere";
+            this.deleteCol.Name = "deleteCol";
+            this.deleteCol.ReadOnly = true;
+            this.deleteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.deleteCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.deleteCol.Width = 75;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -243,13 +255,14 @@ namespace ProiectBD
         private System.Windows.Forms.TabPage newClientTab;
         private System.Windows.Forms.TabPage exitTab;
         private System.Windows.Forms.DataGridView clientiDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdClientCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeClientCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdresaCol;
         private System.Windows.Forms.TableLayoutPanel newClientLayout;
         private System.Windows.Forms.TextBox adresaTB;
         private System.Windows.Forms.TextBox numeTB;
         private System.Windows.Forms.Button addBT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdClientCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeClientCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdresaCol;
+        private System.Windows.Forms.DataGridViewButtonColumn deleteCol;
     }
 }
 

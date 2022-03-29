@@ -77,6 +77,16 @@ namespace ProiectBD
             {
                 int idTratament = Convert.ToInt32(tratamenteDGV.Rows[e.RowIndex].Cells[0].Value);
                 Tratament t = db.getTratamentById(idTratament);
+                if (e.ColumnIndex == deleteCol.Index)
+                {
+                    if (MessageBox.Show("Ștergere tratament?", "Confirmare", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        db.deleteTratament(t);
+                        fillFisa();
+                    }
+
+                    return;
+                }
                 FormaTratament ft = new FormaTratament(this, client, t);
                 ft.Show();
                 this.Hide();
